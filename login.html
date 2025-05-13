@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Login</h1>
+    <input type="text" id="ipt_email" placeholder="E-mail"><br>
+    <input type="password" id="ipt_senhaUser" placeholder="Senha"><br>
+    <button onclick="login()">LOGIN</button>
+<br>
+<h4>Não tem conta ainda? Se cadastre aqui --> <a href="cadastro.html">Cadastro</a> </h4>
+    <div id="div_login"></div>
+
+</div>
+</body>
+<script>
+
+    function login() {
+
+        var emailUser = ipt_email.value;
+        var senhaUser = ipt_senhaUser.value;
+    
+        if(emailUser == "" || senhaUser == ""){
+            alert("Preencha todos os campos!")
+        }
+
+}
+
+</script>
+
+</html>

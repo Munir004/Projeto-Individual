@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="site.css">
+    <title>Cadastro Funcionário</title>
+</head>
+
+<body>
+    <div class="container"> 
+    <h1>Cadastro Usuário</h1>
+    <input type="text" id="ipt_nomeUsuario" placeholder="Nome Completo"><br>
+    <input type="text" id="ipt_apelidoUsuario" placeholder="Apelido"><br>
+    <input type="email" id="ipt_email" placeholder="Email para novidades"><br>
+    <input type="text" id="ipt_telefone" placeholder="Telefone para novidades"><br>
+    <input type="password" id="ipt_senhaUser" placeholder="Senha"><br>
+    <input type="password" id="ipt_confirmarSenhaUser" placeholder="Confirmar Senha"><br>
+    <button onclick="cadastro()">CRIAR CADASTRO USUÁRIO</button>
+    <br>
+    <h4>Voltar --> <a href="index.html">Home</a></h4>
+    <div id="div_resposta"></div>
+
+</div>
+</body>
+<script>
+
+    function cadastro() {
+        var nomeUsuario = ipt_nomeUsuario.value;
+        var email = ipt_email.value;
+        var telefone = ipt_telefone.value;
+        var senhaUser = ipt_senhaUser.value;
+        var confirmarSenhaUser = ipt_confirmarSenhaUser.value;
+        var apelido = ipt_apelidoUsuario.value;
+        
+        // Validando senha 
+        if (senhaUser != confirmarSenhaUser) {
+
+            alert("Senha confirmada diferente da senha inserida, faça novamente")
+
+        } // Validando se todos os campos foram preenchidos 
+        else if (nomeUsuario == '' ||
+                       email == '' || 
+                    telefone == '' || 
+                   senhaUser == '' || 
+          confirmarSenhaUser == '' || 
+                        apelido == '') {
+
+            alert("Preencha todos os campos")
+
+        } // Validando Email
+         else if(!email.includes("@")){
+            alert("Email inválido! Precisa conter @")
+         }
+         // Validando telefone
+        else if(telefone.length != 11){
+            alert("Número de telefone inválido! Insira o DDD também (sem parênteses)")
+        } // Validando funcionário
+        else {
+                alert(`Cadastro concluído com sucesso! Agora a(o) ${nomeUsuario} faz parte do ROCK `)
+
+                div_resposta.innerHTML = `<a href="login.html">Login</a> <a href="index.html">Sair</a>`
+            }
+
+        }
+
+</script>
+
+</html>

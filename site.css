@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f465;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: url("Eddie Projeto Individual.png"); /* ou .jpg conforme o arquivo */
+    background-size: cover 30%; /* ajusta o tamanho da imagem */
+    background-position: center; /* centraliza a imagem */
+    background-color: #111;
+
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-title,
+.nav-links a {
+    background-color: rgba(0, 0, 0, 0.6); /* fundo preto semi-transparente */
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* efeito ao passar o mouse */
+}
+
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #ccc;
+    width: 300px;
+    text-align: center;
+}
+
+input {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* BOTÕES */
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    width: 95%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+    margin: 100px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+h4 {
+    margin-top: 20px;
+}
