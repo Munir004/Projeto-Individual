@@ -1,70 +1,329 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="site.css">
-    <title>Cadastro Funcionário</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rock Trends | Cadastro</title>
+
+  <script src="./js/sessao.js"></script>
+
+  <link rel="stylesheet" href="./css/estilo.css" />
+  <link rel="icon" type="image/png" href="./assets/imgs/simbolo_rock.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
 </head>
 
 <body>
-    <div class="container"> 
-    <h1>Cadastro Usuário</h1>
-    <input type="text" id="ipt_nomeUsuario" placeholder="Nome Completo"><br>
-    <input type="text" id="ipt_apelidoUsuario" placeholder="Apelido"><br>
-    <input type="email" id="ipt_email" placeholder="Email para novidades"><br>
-    <input type="text" id="ipt_telefone" placeholder="Telefone para novidades"><br>
-    <input type="password" id="ipt_senhaUser" placeholder="Senha"><br>
-    <input type="password" id="ipt_confirmarSenhaUser" placeholder="Confirmar Senha"><br>
-    <button onclick="cadastro()">CRIAR CADASTRO USUÁRIO</button>
-    <br>
-    <h4>Voltar --> <a href="index.html">Home</a></h4>
-    <div id="div_resposta"></div>
+  <!--header inicio-->
+  <div class="header">
+    <div class="container">
+      <h1 class="titulo">Rock Trends</h1>
+      <ul class="navbar">
+        <li>
+          <a href="index.html">Inicial</a>
+        </li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+        <li class="agora">
+          <a href="#">Cadastro</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!--header fim-->
 
+  <div class="login">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card card-cadastro">
+        <h2>Cadastro!</h2>
+        <div class="formulario">
+          <!--
+                         Para inserir mais um campo, copie uma das inputs abaixo.
+                         Assim que inserir vá para o script abaixo.
+                     -->
+          <div class="campo">
+            <span>Nome:</span>
+            <input id="nome_input" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
+            <span>Apelido:</span>
+            <input id="apelido_input" type="text" placeholder="Seu apelido para o site" />
+          </div>
+          <div class="campo">
+            <span>E-mail:</span>
+            <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
+          </div>
+          <div class="campo">
+            <span>Senha:</span>
+            <input id="senha_input" type="password" placeholder="******" />
+          </div>
+          <div class="campo">
+            <span>Confirmação da Senha:</span>
+            <input id="confirmacao_senha_input" type="password" placeholder="******" />
+          </div>
+          
+        </div>
+
+        <!-- ...botão cadastrar... -->
+<button class="botao" onclick="cadastrar()">Cadastrar</button>
+</div> <!-- fecha .formulario -->
+
+<div class="questionario">
+  <h3>Responda o questionário:</h3>
+  <form id="form_questionario">
+    <div class="pergunta">
+      <span>1. Qual seu estilo de rock favorito?</span><br>
+      <label><input type="radio" name="resposta1" value="Hard Rock" required> Hard Rock</label>
+      <label><input type="radio" name="resposta1" value="Heavy Metal"> Heavy Metal</label>
+      <label><input type="radio" name="resposta1" value="Punk"> Punk</label>
+      <label><input type="radio" name="resposta1" value="Alternativo"> Alternativo</label>
+    </div>
+    <div class="pergunta">
+      <span>2. Qual dessas bandas você mais gosta?</span><br>
+      <label><input type="radio" name="resposta2" value="Metallica" required> Metallica</label>
+      <label><input type="radio" name="resposta2" value="Iron Maiden"> Iron Maiden</label>
+      <label><input type="radio" name="resposta2" value="Queen"> Queen</label>
+      <label><input type="radio" name="resposta2" value="Nirvana"> Nirvana</label>
+    </div>
+ 
+    <div class="pergunta">
+      <span>3. Qual instrumento você gostaria de tocar?</span><br>
+      <label><input type="radio" name="resposta3" value="Guitarra" required> Guitarra</label>
+      <label><input type="radio" name="resposta3" value="Baixo"> Baixo</label>
+      <label><input type="radio" name="resposta3" value="Bateria"> Bateria</label>
+      <label><input type="radio" name="resposta3" value="Vocal"> Vocal</label>
+    </div>
+
+    <div class="pergunta">
+      <span>4. Qual dessas bandas você queria ver na Rock Trends?</span><br>
+      <label><input type="radio" name="resposta4" value="Aerosmith" required> Aerosmith</label>
+      <label><input type="radio" name="resposta4" value="Avenged Sevenfold"> Avenged Sevenfold</label>
+      <label><input type="radio" name="resposta4" value="Angra"> Slipknot</label>
+      <label><input type="radio" name="resposta4" value="Radiohead"> Radiohead</label>
+    </div>
+
+    <div class="pergunta">
+      <span>5. Qual seu artista favorito?</span><br>
+      <label><input type="radio" name="resposta5" value="Michael Jackson" required> Corey Taylor</label>
+      <label><input type="radio" name="resposta5" value="Bruce Dickson"> Bruce Dickson</label>
+      <label><input type="radio" name="resposta5" value="Kurt Cobain"> Kurt Cobain</label>
+      <label><input type="radio" name="resposta5" value="Freddie Mercury"> Freddie Mercury</label>
+    </div>
+
+  </form>
 </div>
+
+        <div id="div_aguardar" class="loading-div">
+          <img src="./assets/circle-loading.gif" id="loading-gif" />
+        </div>
+
+        <div id="div_erros_login"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--footer inicio-->
+
+  <!--footer fim-->
 </body>
-<script>
-
-    function cadastro() {
-        var nomeUsuario = ipt_nomeUsuario.value;
-        var email = ipt_email.value;
-        var telefone = ipt_telefone.value;
-        var senhaUser = ipt_senhaUser.value;
-        var confirmarSenhaUser = ipt_confirmarSenhaUser.value;
-        var apelido = ipt_apelidoUsuario.value;
-        
-        // Validando senha 
-        if (senhaUser != confirmarSenhaUser) {
-
-            alert("Senha confirmada diferente da senha inserida, faça novamente")
-
-        } // Validando se todos os campos foram preenchidos 
-        else if (nomeUsuario == '' ||
-                       email == '' || 
-                    telefone == '' || 
-                   senhaUser == '' || 
-          confirmarSenhaUser == '' || 
-                        apelido == '') {
-
-            alert("Preencha todos os campos")
-
-        } // Validando Email
-         else if(!email.includes("@")){
-            alert("Email inválido! Precisa conter @")
-         }
-         // Validando telefone
-        else if(telefone.length != 11){
-            alert("Número de telefone inválido! Insira o DDD também (sem parênteses)")
-        } // Validando funcionário
-        else {
-                alert(`Cadastro concluído com sucesso! Agora a(o) ${nomeUsuario} faz parte do ROCK `)
-
-                div_resposta.innerHTML = `<a href="login.html">Login</a> <a href="index.html">Sair</a>`
-            }
-
-        }
-
-</script>
 
 </html>
+
+<script>
+
+  // Array para armazenar empresas cadastradas para validação de código de ativação 
+  let listaEmpresasCadastradas = [];
+
+  function cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var apelidoVar = apelido_input.value
+    var emailVar = email_input.value;
+   /* var cpfVar = cpf_input.value; */
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    /* var codigoVar = codigo_input.value; */
+
+
+    // Verificando se há algum campo em branco
+    if (
+      nomeVar == "" ||
+      apelidoVar == "" ||
+      emailVar == "" ||
+     /* cpfVar == "" || */
+      senhaVar == "" ||
+      confirmacaoSenhaVar == ""
+     /* codigoVar == "" */
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
+
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+    // Validando nome
+    if(nomeVar.length <=1){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Nome precisa ter mais de 1 letra)";
+
+      return false;
+    }
+    // Validando apelido
+    if(apelidoVar.length <=1){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Apelido precisa ter mais de 1 letra)";
+
+      return false;
+    }
+    // Validando email
+    if(!emailVar.includes("@")){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Email inválido! Tem que ter '@')";
+
+
+      return false;
+    }
+    // Validando senha maior que 6 digitos
+    if(senhaVar.length <=6){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Senha precisa conter mais de 6 digitos)";
+
+      return false;
+    }
+    // Validando o input de confirmar senha sendo igual a senha digitada
+    if(confirmacaoSenhaVar != senhaVar){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Confirmar senha precisa ser igual a senha digitada!)";
+
+ 
+      return false;
+    }
+    /* Validando CPF
+    if(cpfVar.length != 11){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(CPF precisa conter 11 digitos)";
+
+      finalizarAguardar();
+      return false;
+    } */
+
+    /* Verificando se o código de ativação é de alguma empresa cadastrada
+    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
+        idEmpresaVincular = listaEmpresasCadastradas[i].id
+        console.log("Código de ativação válido.");
+        break;
+      } else {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
+        finalizarAguardar();
+      }
+    } */
+
+  
+const resposta1 = document.querySelector('input[name="resposta1"]:checked')?.value;
+const resposta2 = document.querySelector('input[name="resposta2"]:checked')?.value;
+const resposta3 = document.querySelector('input[name="resposta3"]:checked')?.value;
+const resposta4 = document.querySelector('input[name="resposta4"]:checked')?.value;
+const resposta5 = document.querySelector('input[name="resposta5"]:checked')?.value;
+
+
+if (!resposta1 || !resposta2 || !resposta3 || !resposta4 || !resposta5) {
+  cardErro.style.display = "block";
+  mensagem_erro.innerHTML = "Responda todas as perguntas do questionário!";
+  return false;
+}
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", { 
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        apelidoServer: apelidoVar,
+        emailServer: emailVar,
+       /* cpfServer: cpfVar, */
+        senhaServer: senhaVar,
+        resposta1,
+        resposta2,
+        resposta3,
+        resposta4,
+        resposta5
+       /* idEmpresaVincularServer: idEmpresaVincular */
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+            resposta.json().then(dados => {
+    sessionStorage.ID_USUARIO = dados.id;
+            });
+
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+  
+      });
+
+    return false;
+  }
+
+  // Listando empresas cadastradas 
+  /* function listar() {
+    fetch("/empresas/listar", { //ERRO AQ
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresasCadastradas.push(empresa);
+
+            console.log("listaEmpresasCadastradas")
+            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  } */
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>
